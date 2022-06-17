@@ -20,24 +20,29 @@ namespace UC1
         public static void CheckAttendance(int number)
         {
             int hours;
-            if(number == 0)
+            switch (number)
             {
+                case 0:
+            
                 Console.WriteLine("employee is absent");
                 hours = 0;
                 CalculateSalary(hours);
-            }
-            else if(number==1)
-            {
+                    break;
+
+                case 1:
                 Console.WriteLine("Employee is present part time");
                 hours = 4;
                 CalculateSalary(hours);
-            }
-            else
-            {
+                    break;
+
+                case 2:
+            
                 Console.WriteLine("Employee is present full time");
                 hours = 8;
-                CalculateSalary(hours);
-            }
+                    CalculateSalary(hours);
+                    break;
+            
+        }
         }
 
         public static void CalculateSalary(int hours)
