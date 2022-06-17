@@ -9,12 +9,16 @@ namespace UC1
     internal class EmployeeAttendance
     {
         static int WagePerHour = 20;
+        static int MaxNoOfWorkingDays = 20;
         
         public void getAttendance()
         {
             Random random = new Random();
-            int number = random.Next(0, 3);
-            CheckAttendance(number);
+            for (int i = 0; i < MaxNoOfWorkingDays; i++)
+            {
+                int number = random.Next(0, 3);
+                CheckAttendance(number);
+            }
         }
 
         public static void CheckAttendance(int number)
