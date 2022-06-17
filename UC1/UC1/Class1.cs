@@ -23,7 +23,7 @@ namespace UC1
             if(number == 0)
             {
                 Console.WriteLine("employee is absent");
-                hours = 0
+                hours = 0;
                 CalculateSalary(hours);
             }
             else
@@ -34,7 +34,7 @@ namespace UC1
             }
         }
 
-        public void CalculateSalary(int hours)
+        public static void CalculateSalary(int hours)
         {
             int salary = WagePerHour * hours;
             Console.WriteLine("Salary is " + salary);
