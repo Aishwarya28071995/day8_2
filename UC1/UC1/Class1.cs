@@ -13,7 +13,7 @@ namespace UC1
         public void getAttendance()
         {
             Random random = new Random();
-            int number = random.Next(0, 2);
+            int number = random.Next(0, 3);
             CheckAttendance(number);
         }
 
@@ -23,18 +23,24 @@ namespace UC1
             if(number == 0)
             {
                 Console.WriteLine("employee is absent");
-                hours = 0
+                hours = 0;
+                CalculateSalary(hours);
+            }
+            else if(number==1)
+            {
+                Console.WriteLine("Employee is present part time");
+                hours = 4;
                 CalculateSalary(hours);
             }
             else
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Employee is present full time");
                 hours = 8;
                 CalculateSalary(hours);
             }
         }
 
-        public void CalculateSalary(int hours)
+        public static void CalculateSalary(int hours)
         {
             int salary = WagePerHour * hours;
             Console.WriteLine("Salary is " + salary);
