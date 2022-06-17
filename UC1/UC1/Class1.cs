@@ -10,16 +10,23 @@ namespace UC1
     {
         static int WagePerHour = 20;
         static int MaxNoOfWorkingDays = 20;
-        
+        static int MaxNumberOfHours = 100;
+        static int j = 0;
+        static int i = 0;
+        static int TotalSalary = 0;
+
         public void getAttendance()
+
         {
+            
             Random random = new Random();
-            for (int i = 0; i < MaxNoOfWorkingDays; i++)
+            while (i <= MaxNoOfWorkingDays && j <= MaxNumberOfHours)
             {
                 int number = random.Next(0, 3);
                 CheckAttendance(number);
             }
-        }
+         }
+        
 
         public static void CheckAttendance(int number)
         {
@@ -36,6 +43,8 @@ namespace UC1
                 case 1:
                 Console.WriteLine("Employee is present part time");
                 hours = 4;
+                    i++;
+                    j = j + hours;
                 CalculateSalary(hours);
                     break;
 
@@ -43,6 +52,8 @@ namespace UC1
             
                 Console.WriteLine("Employee is present full time");
                 hours = 8;
+                    i++;
+                    j = j + hours;
                     CalculateSalary(hours);
                     break;
             
@@ -54,5 +65,6 @@ namespace UC1
             int salary = WagePerHour * hours;
             Console.WriteLine("Salary is " + salary);
         }
+        
     }
 }
